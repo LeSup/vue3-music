@@ -15,7 +15,7 @@
       </div>
       <div class="container" v-loading="state.loading">
         <BaseScroll :probeType="3" @scroll="handleScroll">
-          <SongList :data="props.data" />
+          <SongList :data="props.data" :rank="props.rank" />
         </BaseScroll>
       </div>
     </div>
@@ -36,7 +36,8 @@ const props = defineProps({
     default: () => []
   },
   pic: String,
-  title: String
+  title: String,
+  rank: Boolean
 })
 
 const state = reactive({ loading: true })

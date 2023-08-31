@@ -24,13 +24,19 @@ const router = createRouter({
       children: [
         {
           path: ':id',
-          component: () => import('../views/singerDetail/index.vue')
+          component: () => import('../views/SingerDetail/index.vue')
         }
       ]
     },
     {
       path: '/rank',
-      component: () => import('../views/Rank/index.vue')
+      component: () => import('../views/Rank/index.vue'),
+      children: [
+        {
+          path: ':id',
+          component: () => import('../views/RankDetail/index.vue')
+        }
+      ]
     },
     {
       path: '/search',
