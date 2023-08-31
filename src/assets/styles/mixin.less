@@ -1,0 +1,34 @@
+.ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.square(@size) {
+  width: @size;
+  height: @size;
+}
+
+.backdrop-filter-blur(@pixel) {
+  backdrop-filter: blur(@pixel);
+  -webkit-backdrop-filter: blur(@pixel);
+}
+
+.spread-area() {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+.adapt-image(@url) {
+  background-image: url('@{url}@2x.png');
+  @media (min-device-pixel-ratio: 3), (-webkit-min-device-pixel-ratio: 3) {
+    background-image: url('@{url}@3x.png');
+  }
+}
