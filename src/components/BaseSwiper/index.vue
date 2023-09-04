@@ -11,11 +11,15 @@ import Slide from '@better-scroll/slide'
 
 BScroll.use(Slide)
 
-let bs = null
+defineOptions({
+  name: 'BaseSwiper'
+})
 
 const emit = defineEmits(['change'])
+
 const swiper = ref(null)
 
+let bs = null
 onMounted(() => {
   bs = new BScroll(swiper.value, {
     scrollX: true,

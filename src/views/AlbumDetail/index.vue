@@ -13,6 +13,10 @@ import { processSongs } from '@/services/song'
 const router = useRouter()
 const albumStore = useAlbumStore()
 
+defineOptions({
+  name: 'ViewAlbumDetail'
+})
+
 const songs = ref([])
 
 onMounted(async () => {
@@ -25,5 +29,3 @@ onMounted(async () => {
   songs.value = await processSongs(result.songs)
 })
 </script>
-
-<style lang=""></style>

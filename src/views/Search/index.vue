@@ -1,12 +1,11 @@
 <template>
-  <div>
-   搜索
-  </div>
+  <div>搜索</div>
 </template>
 
-<script>
+<script setup>
+defineOptions({
+  name: 'ViewSearch'
+})
 </script>
 
-<style lang="less" scoped>
-  
-</style>
+<style lang="less" scoped></style>

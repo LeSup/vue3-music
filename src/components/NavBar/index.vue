@@ -15,7 +15,11 @@
   </nav>
 </template>
 
-<script></script>
+<script setup>
+defineOptions({
+  name: 'NavBar'
+})
+</script>
 
 <style lang="less" scoped>
 .nav-bar {

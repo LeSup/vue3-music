@@ -37,7 +37,7 @@
         </div>
       </div>
     </BaseScroll>
-    <RouterView></RouterView>
+    <RouterView />
   </main>
 </template>
 
@@ -49,6 +49,10 @@ import { getRecommends } from '@/services/recommend'
 
 const router = useRouter()
 const albumStore = useAlbumStore()
+
+defineOptions({
+  name: 'ViewRecommend'
+})
 
 const state = reactive({
   loading: false,
@@ -112,7 +116,7 @@ function handleClick(item) {
   &-dot {
     .square(8px);
     background-color: var(--color-text-l);
-    border-radius: 8px;
+    border-radius: 4px;
     &.active {
       width: 16px;
       background-color: var(--color-text);

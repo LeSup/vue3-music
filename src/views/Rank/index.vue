@@ -25,6 +25,10 @@ import useRankStore from '@/stores/rank'
 const router = useRouter()
 const rankStore = useRankStore()
 
+defineOptions({
+  name: 'ViewRank'
+})
+
 const state = reactive({
   ranks: [],
   loading: false

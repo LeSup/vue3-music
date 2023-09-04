@@ -10,9 +10,14 @@ import useSingerStore from '@/stores/singer'
 import { getSingerDetail } from '@/services/singer'
 import { processSongs } from '@/services/song'
 
-const songs = ref([])
 const router = useRouter()
 const singerStore = useSingerStore()
+
+defineOptions({
+  name: 'ViewSingerDetail'
+})
+
+const songs = ref([])
 
 onMounted(async () => {
   if (!singerStore.singer) {
@@ -24,5 +29,3 @@ onMounted(async () => {
   songs.value = await processSongs(result.songs)
 })
 </script>
-
-<style></style>

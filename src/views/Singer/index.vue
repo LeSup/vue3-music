@@ -82,6 +82,12 @@ const { title, transform, handleScroll } = useSticky(state, group)
 const { handleTouchStart, handleTouchMove, handleTouchEnd } = useShortcut(state, scroll, group)
 </script>
 
+<script setup>
+defineOptions({
+  name: 'ViewSinger'
+})
+</script>
+
 <style lang="less" scoped>
 .sticky,
 .name-title {

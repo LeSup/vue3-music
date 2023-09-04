@@ -4,6 +4,7 @@ import lazy from 'vue3-lazy'
 
 import BaseButton from '@/components/BaseButton/index.vue'
 import BaseScroll from '@/components/BaseScroll/index.vue'
+import BaseSlider from '@/components/BaseSlider/index.vue'
 import BaseSwiper from '@/components/BaseSwiper/index.vue'
 import loadingDirective from '@/components/BaseLoading/directive'
 
@@ -22,8 +23,9 @@ app.use(lazy, {
 })
 
 app.component('BaseButton', BaseButton)
-app.component('BaseSwiper', BaseSwiper)
 app.component('BaseScroll', BaseScroll)
+app.component('BaseSlider', BaseSlider)
+app.component('BaseSwiper', BaseSwiper)
 
 app.directive('loading', loadingDirective)
 

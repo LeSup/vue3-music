@@ -13,6 +13,10 @@
 </template>
 
 <script setup>
+defineOptions({
+  name: 'SongList'
+})
+
 const props = defineProps({
   data: {
     type: Array,

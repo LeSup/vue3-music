@@ -7,7 +7,10 @@
   </header>
 </template>
 
-<script>
+<script setup>
+defineOptions({
+  name: 'TopBar'
+})
 </script>
 
 <style lang="less" scoped>

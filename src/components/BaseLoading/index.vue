@@ -8,7 +8,11 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+defineOptions({
+  name: 'BaseLoading'
+})
+</script>
 
 <style lang="less" scoped>
 .loading {

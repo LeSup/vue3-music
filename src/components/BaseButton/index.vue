@@ -1,14 +1,24 @@
 <template>
-  <div class="button">
+  <div class="button" @click.stop="handleClick">
     <slot></slot>
     <div class="text">{{ props.text }}</div>
   </div>
 </template>
 
 <script setup>
+defineOptions({
+  name: 'BaseButton'
+})
+
+const emit = defineEmits(['click'])
+
 const props = defineProps({
   text: String
 })
+
+function handleClick() {
+  emit('click')
+}
 </script>
 
 <style lang="less" scoped>

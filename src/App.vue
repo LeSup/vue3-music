@@ -1,6 +1,7 @@
 <script setup>
 import TopBar from '@/components/TopBar/index.vue'
 import NavBar from '@/components/NavBar/index.vue'
+import Player from '@/views/Player/index.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import NavBar from '@/components/NavBar/index.vue'
         <component :is="Component" />
       </KeepAlive>
     </RouterView>
+    <Player />
   </div>
 </template>
 

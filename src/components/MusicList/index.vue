@@ -8,7 +8,7 @@
       <div class="pic" :class="picCls" :style="picStyle">
         <div class="pic-blur" :style="blurStyle"></div>
         <div class="pic-button" v-show="!fixed">
-          <BaseButton text="随机播放全部">
+          <BaseButton text="随机播放全部" @click="handleClickButton">
             <i class="icon icon-play"></i>
           </BaseButton>
         </div>
@@ -26,9 +26,15 @@
 import { reactive, computed, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import SongList from '@/components/SongList/index.vue'
+import usePlayerStore from '@/stores/player'
 import useScroll from './useScroll'
 
 const router = useRouter()
+const playerStore = usePlayerStore()
+
+defineOptions({
+  name: 'MusicList'
+})
 
 const props = defineProps({
   data: {
@@ -63,6 +69,10 @@ watch(
 
 function handleBack() {
   router.go(-1)
+}
+
+function handleClickButton() {
+  playerStore.randomPlay(props.data)
 }
 
 const { blur, scale, fixed, handleScroll } = useScroll()

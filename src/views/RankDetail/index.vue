@@ -10,9 +10,14 @@ import useRankStore from '@/stores/rank'
 import { getRankDetail } from '@/services/rank'
 import { processSongs } from '@/services/song'
 
-const songs = ref([])
 const router = useRouter()
 const rankStore = useRankStore()
+
+defineOptions({
+  name: 'ViewRankDetail'
+})
+
+const songs = ref([])
 
 onMounted(async () => {
   if (!rankStore.rank) {
@@ -24,5 +29,3 @@ onMounted(async () => {
   songs.value = await processSongs(result.songs)
 })
 </script>
-
-<style></style>

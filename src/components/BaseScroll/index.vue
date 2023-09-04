@@ -11,9 +11,12 @@ import ObserveDOM from '@better-scroll/observe-dom'
 
 BScroll.use(ObserveDOM)
 
-let bs = null
+defineOptions({
+  name: 'BaseScroll'
+})
 
 const emit = defineEmits(['scroll'])
+
 const props = defineProps({
   click: {
     type: Boolean,
@@ -24,8 +27,10 @@ const props = defineProps({
     default: 0
   }
 })
+
 const scroll = ref(null)
 
+let bs = null
 onMounted(() => {
   bs = new BScroll(scroll.value, {
     observeDOM: true,
